@@ -33,13 +33,13 @@ public:
     return multiplication;
  }
  
-  complex division(complex c)
- { complex division;
-    division.real=real/c.real;
-    division.img=img/c.img;
-    return division;
- }
- };
+complex div(complex c)
+{ complex div;
+  int denominator = c.real * c.real + c.img * c.img;
+  div.real = (real * c.real + img * c.img) / denominator;
+  div.img = (img * c.real - real * c.img) / denominator;
+  return div;
+}
 
 int main() {
     complex c1, c2, c3,c4,c5,c6;
